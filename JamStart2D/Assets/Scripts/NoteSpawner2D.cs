@@ -39,6 +39,15 @@ public class NoteSpawner2D : MonoBehaviour
             var scaler = note.GetComponent<NoteScaler>();
             if (scaler != null)
                 scaler.StretchInDirection(requiredDirection, duration);
+
+            // Visual (head, body, tail)
+            var visualBuilder = note.GetComponent<NoteHoldVisualBuilder>();
+            if (visualBuilder != null)
+            {
+                visualBuilder.showHead = true;
+                float distance = duration * 5f; // depende de la velocidad visual
+                visualBuilder.Build(requiredDirection, distance);
+            }
         }
         else
         {
@@ -46,6 +55,8 @@ public class NoteSpawner2D : MonoBehaviour
             GameObject note = Instantiate(notePrefabs[0], transform.position, Quaternion.identity);
         }
     }
+
+
 
 
 
