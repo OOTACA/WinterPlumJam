@@ -44,6 +44,24 @@ MonoBehaviour:
     mEndSample: 1962450
   - mStartSample: 1984500
     mEndSample: 1984500
+  - mStartSample: 2315250
+    mEndSample: 2337300
+  - mStartSample: 2447550
+    mEndSample: 2447550
+  - mStartSample: 2623950
+    mEndSample: 2646000
+  - mStartSample: 2646000
+    mEndSample: 2668050
+  - mStartSample: 2888600
+    mEndSample: 2900326
+  - mStartSample: 2954700
+    mEndSample: 2954700
+  - mStartSample: 3131100
+    mEndSample: 3131100
+  - mStartSample: 3184350
+    mEndSample: 3184350
+  - mStartSample: 3197700
+    mEndSample: 3208458
   _SerializedPayloadTypes: []
   _AssetPayloads: []
   _AssetPayloadIdxs: 
