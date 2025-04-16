@@ -1,14 +1,18 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class NoteHoldChecker : MonoBehaviour
 {
     [Header("Settings")]
     public Vector2 requiredDirection;
     public GameObject hitParticlesPrefab;
-    public float particleCooldown = 0.4f; // tiempo mínimo entre partículas
+    public float particleCooldown = 0.4f;
 
-    [Header("Visual")]
-    public SpriteRenderer spriteRenderer;
+    [Header("Visuals (linked externally)")]
+    public SpriteRenderer headRenderer;
+    public SpriteRenderer tailRenderer;
+    public List<SpriteRenderer> bodyRenderers = new List<SpriteRenderer>();
+
     public Color successColor = Color.green;
     public Color idleColor = Color.white;
     public Color holdingColor = Color.yellow;
@@ -17,20 +21,21 @@ public class NoteHoldChecker : MonoBehaviour
     private bool tapNoteRegistered = false;
     private bool alreadyCompleted = false;
     private float lastParticleTime = -999f;
+    private bool comboBroken = false;
+
+    private float enterZoneTime = -1f;
+    public float maxTapDelay = 1f; // segundos para aceptar TAP
+
 
     void Start()
     {
-        if (spriteRenderer == null)
-            spriteRenderer = GetComponent<SpriteRenderer>();
-
-        spriteRenderer.color = idleColor;
+        SetAllRenderersColor(idleColor);
     }
 
     void Update()
     {
         if (alreadyCompleted) return;
 
-        // Registro de TAP inicial
         if (!tapNoteRegistered && PlayerInputSystem.tapNotePressed)
         {
             tapNoteRegistered = true;
@@ -46,9 +51,8 @@ public class NoteHoldChecker : MonoBehaviour
 
                 if (dot > 0.9f)
                 {
-                    spriteRenderer.color = holdingColor;
+                    SetAllRenderersColor(holdingColor);
 
-                    // Cooldown: ¿podemos mostrar partículas?
                     if (Time.time - lastParticleTime >= particleCooldown)
                     {
                         EmitParticle();
@@ -60,7 +64,19 @@ public class NoteHoldChecker : MonoBehaviour
             }
         }
 
-        spriteRenderer.color = idleColor;
+        SetAllRenderersColor(idleColor);
+
+        if (!comboBroken && tapNoteRegistered && isInsideZone)
+        {
+            Vector2 dir = PlayerInputSystem.currentDirection;
+            float dot = Vector2.Dot(dir.normalized, requiredDirection.normalized);
+
+            if (dir == Vector2.zero || dot < 0.8f)
+            {
+                ComboManager.Instance?.ResetCombo();
+                comboBroken = true;
+            }
+        }
     }
 
     void EmitParticle()
@@ -69,7 +85,6 @@ public class NoteHoldChecker : MonoBehaviour
         {
             GameObject particles = Instantiate(hitParticlesPrefab, transform.position, Quaternion.identity);
             particles.transform.localScale = Vector3.one;
-            Debug.Log($"[Note {name}] ✨ Emitiendo partículas (CD ok)");
         }
     }
 
@@ -78,14 +93,28 @@ public class NoteHoldChecker : MonoBehaviour
         if (alreadyCompleted) return;
         alreadyCompleted = true;
 
-        spriteRenderer.color = successColor;
+        SetAllRenderersColor(successColor);
         EmitParticle();
-        Debug.Log($"[Note {name}] ✅ COMPLETADA");
+        ComboManager.Instance?.AddCombo();
+
+        ScoreManager.Instance?.AddScore(ScoreManager.Instance.pointsPerHold);
         Destroy(gameObject, 0.05f);
+    }
+
+    void SetAllRenderersColor(Color color)
+    {
+        if (headRenderer) headRenderer.color = color;
+        if (tailRenderer) tailRenderer.color = color;
+        foreach (var body in bodyRenderers)
+        {
+            if (body != null) body.color = color;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        enterZoneTime = Time.time;
+
         if (other.CompareTag("ActivationZone"))
         {
             isInsideZone = true;

@@ -40,6 +40,9 @@ public class NoteTapChecker : MonoBehaviour
         }
 
         Debug.Log($"[Note {name}] ✅ TAP completado");
+        ComboManager.Instance?.AddCombo();
+        ScoreManager.Instance?.AddScore(ScoreManager.Instance.pointsPerTap);
+
         Destroy(gameObject, 0.05f);
     }
 
