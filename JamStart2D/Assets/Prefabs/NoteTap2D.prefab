@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -2224056282168853053}
   - component: {fileID: 3306824777830556859}
   - component: {fileID: 1481734065936947486}
-  - component: {fileID: -1691121351734282956}
+  - component: {fileID: 95170201373059221}
   m_Layer: 0
   m_Name: NoteTap2D
   m_TagString: Untagged
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0}
-  speed: 5
+  speed: 8
 --- !u!114 &-2224056282168853053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &-1691121351734282956
+--- !u!58 &95170201373059221
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,4 +183,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.49999997
+  m_Radius: 1.6102729
