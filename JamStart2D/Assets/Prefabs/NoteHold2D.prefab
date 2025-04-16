@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0}
-  speed: 3
+  speed: 13
 --- !u!114 &-4224447843876580273
 MonoBehaviour:
   m_ObjectHideFlags: 0

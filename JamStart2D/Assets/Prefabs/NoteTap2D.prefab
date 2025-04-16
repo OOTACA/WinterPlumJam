@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0}
-  speed: 5
+  speed: 8
 --- !u!114 &-2224056282168853053
 MonoBehaviour:
   m_ObjectHideFlags: 0
