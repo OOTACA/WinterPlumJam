@@ -14,22 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mEventID: TopLeft
   mEventList:
-  - mStartSample: 88200
-    mEndSample: 88200
-  - mStartSample: 176400
-    mEndSample: 176400
-  - mStartSample: 264600
-    mEndSample: 264600
-  - mStartSample: 352800
-    mEndSample: 352800
-  - mStartSample: 441000
-    mEndSample: 441000
-  - mStartSample: 529200
-    mEndSample: 529200
-  - mStartSample: 617400
+  - mStartSample: 507150
+    mEndSample: 507150
+  - mStartSample: 595350
     mEndSample: 617400
-  - mStartSample: 683550
-    mEndSample: 1036350
+  - mStartSample: 749700
+    mEndSample: 749700
+  - mStartSample: 859950
+    mEndSample: 859950
+  - mStartSample: 1102500
+    mEndSample: 1102500
+  - mStartSample: 1234800
+    mEndSample: 1234800
+  - mStartSample: 1256850
+    mEndSample: 1256850
+  - mStartSample: 1300950
+    mEndSample: 1300950
+  - mStartSample: 1521450
+    mEndSample: 1521450
+  - mStartSample: 1653750
+    mEndSample: 1675800
+  - mStartSample: 2006550
+    mEndSample: 2028600
+  - mStartSample: 2050650
+    mEndSample: 2050650
   _SerializedPayloadTypes: []
   _AssetPayloads: []
   _AssetPayloadIdxs: 

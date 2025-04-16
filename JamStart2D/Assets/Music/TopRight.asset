@@ -14,20 +14,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mEventID: TopRight
   mEventList:
-  - mStartSample: 66150
-    mEndSample: 66150
-  - mStartSample: 154350
-    mEndSample: 154350
-  - mStartSample: 242550
-    mEndSample: 242550
-  - mStartSample: 264600
-    mEndSample: 264600
-  - mStartSample: 286650
-    mEndSample: 286650
-  - mStartSample: 352800
-    mEndSample: 463050
-  - mStartSample: 595350
-    mEndSample: 595350
+  - mStartSample: 396900
+    mEndSample: 396900
+  - mStartSample: 540225
+    mEndSample: 540225
+  - mStartSample: 562275
+    mEndSample: 562275
+  - mStartSample: 727650
+    mEndSample: 727650
+  - mStartSample: 771750
+    mEndSample: 771750
+  - mStartSample: 1058400
+    mEndSample: 1058400
+  - mStartSample: 1080450
+    mEndSample: 1080450
+  - mStartSample: 1278900
+    mEndSample: 1278900
+  - mStartSample: 1323000
+    mEndSample: 1323000
+  - mStartSample: 1477350
+    mEndSample: 1499400
+  - mStartSample: 1587600
+    mEndSample: 1587600
+  - mStartSample: 1609650
+    mEndSample: 1609650
+  - mStartSample: 1631700
+    mEndSample: 1631700
+  - mStartSample: 1719900
+    mEndSample: 1719900
+  - mStartSample: 1741950
+    mEndSample: 1741950
+  - mStartSample: 1764000
+    mEndSample: 1764000
+  - mStartSample: 1874250
+    mEndSample: 1896300
+  - mStartSample: 1918350
+    mEndSample: 1918350
+  - mStartSample: 2160900
+    mEndSample: 2182950
   _SerializedPayloadTypes: []
   _AssetPayloads: []
   _AssetPayloadIdxs: 
