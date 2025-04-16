@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4391103276072756026}
+  - component: {fileID: 717275889718125611}
   - component: {fileID: 6314832443559602529}
   - component: {fileID: -4224447843876580273}
   - component: {fileID: 3306824777830556859}
@@ -36,6 +37,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &717275889718125611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5790620553673956964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5338686c9d5e745811cf5d0468a339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stretchFactor: 0.1
 --- !u!114 &6314832443559602529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0}
-  speed: 5
+  speed: 3
 --- !u!114 &-4224447843876580273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,9 +78,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredDirection: {x: 0, y: 0}
   hitParticlesPrefab: {fileID: 2463888800167128078, guid: a6ee63e856d183747860af40cce8be62, type: 3}
+  particleCooldown: 5
   spriteRenderer: {fileID: 3306824777830556859}
   successColor: {r: 0, g: 1, b: 0, a: 1}
   idleColor: {r: 1, g: 1, b: 1, a: 1}
+  holdingColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!212 &3306824777830556859
 SpriteRenderer:
   m_ObjectHideFlags: 0
