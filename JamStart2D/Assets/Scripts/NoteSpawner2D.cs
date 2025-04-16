@@ -19,29 +19,34 @@ public class NoteSpawner2D : MonoBehaviour
         if (Koreographer.Instance != null)
             Koreographer.Instance.UnregisterForAllEvents(this);
     }
+
     void OnKoreographyEvent(KoreographyEvent evt)
     {
-        GameObject prefabToUse = evt.IsOneOff() ? notePrefabs[0] : notePrefabs[1];
-        GameObject note = Instantiate(prefabToUse, transform.position, Quaternion.identity);
-
         if (!evt.IsOneOff())
         {
-            // Si es un span, le damos dirección y duración
+            // Calcular duración del evento (en segundos)
+            float duration = (evt.EndSample - evt.StartSample) / (float)Koreographer.Instance.GetMusicSampleRate();
+
+            // Instanciar solo UNA nota larga
+            GameObject note = Instantiate(notePrefabs[1], transform.position, Quaternion.identity);
+
+            // Dirección requerida
             var checker = note.GetComponent<NoteHoldChecker>();
             if (checker != null)
-            {
                 checker.requiredDirection = requiredDirection;
-            }
 
+            // Escalado
             var scaler = note.GetComponent<NoteScaler>();
             if (scaler != null)
-            {
-                float duration = (evt.EndSample - evt.StartSample) / (float)Koreographer.Instance.GetMusicSampleRate();
                 scaler.StretchInDirection(requiredDirection, duration);
-            }
-
+        }
+        else
+        {
+            // Nota normal (tap)
+            GameObject note = Instantiate(notePrefabs[0], transform.position, Quaternion.identity);
         }
     }
+
 
 
 
