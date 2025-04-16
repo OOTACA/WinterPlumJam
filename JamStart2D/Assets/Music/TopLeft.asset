@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mEventID: TopLeft
   mEventList:
+  - mStartSample: 396900
+    mEndSample: 396900
+  - mStartSample: 418950
+    mEndSample: 418950
   - mStartSample: 507150
     mEndSample: 507150
   - mStartSample: 595350
@@ -38,6 +42,24 @@ MonoBehaviour:
     mEndSample: 2028600
   - mStartSample: 2050650
     mEndSample: 2050650
+  - mStartSample: 2227050
+    mEndSample: 2227050
+  - mStartSample: 2249100
+    mEndSample: 2249100
+  - mStartSample: 2359350
+    mEndSample: 2359350
+  - mStartSample: 2668050
+    mEndSample: 2668050
+  - mStartSample: 2778300
+    mEndSample: 2778300
+  - mStartSample: 2866500
+    mEndSample: 2877160
+  - mStartSample: 2932650
+    mEndSample: 2932650
+  - mStartSample: 3020850
+    mEndSample: 3020850
+  - mStartSample: 3166995
+    mEndSample: 3166995
   _SerializedPayloadTypes: []
   _AssetPayloads: []
   _AssetPayloadIdxs: 
