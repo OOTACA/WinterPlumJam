@@ -5,6 +5,7 @@ using TMPro;
 
 public class ComboManager : MonoBehaviour
 {
+    public MoodManager moodManager;
     public static ComboManager Instance;
 
     [Header("UI")]
@@ -39,6 +40,8 @@ public class ComboManager : MonoBehaviour
             comboText.text = currentCombo > 0 ? $"COMBO: \n\n{currentCombo}" : "";
         }
     }
+
+    
 
     public int GetCurrentCombo() => currentCombo;
     public int GetMaxCombo() => maxCombo;

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b02e46680287e6c4c870a00be7e8a253
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - faceImage: {instanceID: 0}
+  - happySprite: {fileID: -1629419434528999980, guid: ac3c5de669b4bc5469c34fadf82a2c09, type: 3}
+  - neutralSprite: {fileID: 5257814570630393612, guid: 0da9ca08721ded042b9c9eca59a6dab3, type: 3}
+  - angrySprite: {fileID: 8388195772772174178, guid: 0f05a3336f1048545afa4b8106e740c1, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
